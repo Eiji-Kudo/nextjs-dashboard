@@ -1,12 +1,12 @@
-import { CustomerField } from '@/app/lib/definitions';
-import Link from 'next/link';
+import { CustomerField } from "@/app/lib/definitions";
+import { Button } from "@/app/ui/button";
 import {
   CheckIcon,
   ClockIcon,
   CurrencyDollarIcon,
-  UserCircleIcon,
-} from '@heroicons/react/24/outline';
-import { Button } from '@/app/ui/button';
+  UserCircleIcon
+} from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   return (
@@ -27,11 +27,11 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
               <option value="" disabled>
                 Select a customer
               </option>
-              {customers.map((customer) => (
+              {customers.map(customer =>
                 <option key={customer.id} value={customer.id}>
                   {customer.name}
                 </option>
-              ))}
+              )}
             </select>
             <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
