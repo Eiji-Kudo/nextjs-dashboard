@@ -2,13 +2,13 @@
 
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
+import router from "next/router";
 
 export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams);
   const pathname = usePathname();
-  const { replace } = useRouter();
+
   function handleSearch(term: string) {
 
     if (term) {
@@ -16,7 +16,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     } else {
       params.delete("query");
     }
-    replace(`${pathname}?${params.toString()}`);
+    router.replace(`${pathname}?${params.toString()}`);
   }
 
   return (
