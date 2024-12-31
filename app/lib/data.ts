@@ -71,6 +71,8 @@ export async function fetchCardData() {
       FROM invoices
     `;
 
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
     const data = await Promise.all([
       invoiceCountPromise,
       customerCountPromise,
