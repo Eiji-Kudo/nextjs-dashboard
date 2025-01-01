@@ -4,7 +4,8 @@
     "build": "next build",
     "dev": "next dev --turbopack",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "ts:test": "tsc --noEmit"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
